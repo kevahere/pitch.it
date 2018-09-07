@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 
-python manage.py server
+python3.6 manage.py server
