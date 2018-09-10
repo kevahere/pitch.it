@@ -42,7 +42,7 @@
           <entry key="LICENSE" value="11" />
           <entry key="Procfile" value="10" />
           <entry key="html" value="1701" />
-          <entry key="py" value="463" />
+          <entry key="py" value="776" />
           <entry key="sh" value="3" />
           <entry key="txt" value="2" />
         </counts>
@@ -51,7 +51,7 @@
         <counts>
           <entry key="HTML" value="1701" />
           <entry key="PLAIN_TEXT" value="26" />
-          <entry key="Python" value="463" />
+          <entry key="Python" value="776" />
         </counts>
       </usages-collector>
     </session>
@@ -121,8 +121,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+            <state relative-caret-position="277">
+              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+              <folding>
+                <marker date="1536552850795" expanded="true" signature="494:499" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -256,14 +259,14 @@
     <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19508563" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19508563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" visible="true" weight="0.39130434" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.39130434" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32919255" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
@@ -416,8 +419,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        <state relative-caret-position="277">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <marker date="1536552850795" expanded="true" signature="494:499" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
