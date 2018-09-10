@@ -7,10 +7,10 @@ class Config:
 
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kevin:123@localhost/pitchit'
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class ProdConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     '''
     Production  configuration child class
 
@@ -21,6 +21,7 @@ class ProdConfig(Config):
 
 
 class DevConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://kevin:123@localhost/pitchit'
     '''
     Development  configuration child class
 
@@ -30,7 +31,7 @@ class DevConfig(Config):
 
     DEBUG = True
 
-CONFIG_OPTIONS = {
+config_options = {
     'development': DevConfig,
     'production': ProdConfig
 }

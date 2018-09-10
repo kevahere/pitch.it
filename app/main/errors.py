@@ -1,7 +1,7 @@
 from flask import render_template
-from . import MAIN
+from . import main
 
-@MAIN.errorhandler(404)
+@main.errorhandler(404)
 def not_found(error):
     '''
     Function to render the 404 error page
