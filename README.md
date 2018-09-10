@@ -1,28 +1,27 @@
-# Project Name
+# Pitch It
 
 <p align = "center">
-    <b>Author</b>  
+    <b>Project Author: Kevin Ahere</b>  
 </p>
 
 ### Description
-This application...
+This application allows users to submit their best elevator pitch in one of two categories. Pick up lines and product pitches.
 
 ***
 #### The app specifications 
 This website will:
 
-    Allow..
-    Display..
-    Provide..
-    Help someone..
+    Allow users to add pitches and vote for their favorites.
+    Display submitted pitches in differnt categories
+ 
 
 #### Technologies
-* Python
+* Python 3.6
 * Flask (in Python)
 * Bootstrap (for styling)
 * Postgresql (the database)
 
-View the source code at [GitHub](https://github.com/Rreuben/name of the repo)
+View the source code at [GitHub](https://github.com/kevahere/pitch.it)
 
 #### Installation/Setup
 You need to have Python 3.6 installed to run this program.
@@ -40,12 +39,14 @@ In the virtual environment:
 
 After running these commands, you can run the website.
 
+ $`start.sh`
+
 #### Alternatively
 * Open browser (Google Chrome Recommended)
-* Visit the live [website](https://name of deployed app.herokuapp.com)
+* Visit the live [website](https://kevs-pitch-it.herokuapp.com)
 
 ***
 
 <p align = "center">
-    <a href = "https://github.com/Rreuben/path_to_your_licence_file">LICENSE</a>
+    <a href = "https://github.com/kevahere/pitch.it/blob/master/LICENSE">LICENSE</a>
 </p># pitch.it
