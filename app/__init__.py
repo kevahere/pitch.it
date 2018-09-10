@@ -4,9 +4,11 @@ from config import CONFIG_OPTIONS
 # Import extensions
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 
-BOOTSTRAP = Bootstrap()
-DB = SQLAlchemy()
+
+bootstrap = Bootstrap()
+db = SQLAlchemy()
 
 def create_app(config_name):
 
@@ -16,10 +18,11 @@ def create_app(config_name):
     app.config.from_object(CONFIG_OPTIONS[config_name])
 
     # Initializing flask extensions
-    BOOTSTRAP.init_app(app)
-    DB.init_app(app)
+    bootstrap.init_app(app)
+    db.init_app(app)
 
-    # Registering th blueprint
+    # Registering the blueprint
     from .main import MAIN as main_blueprint
     app.register_blueprint(main_blueprint)
+
     return app
