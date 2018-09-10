@@ -1,22 +1,22 @@
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager, Server
-from app import create_app, DB
+from app import create_app, db
 
 # instances for the create_app
-APP = create_app('development')
+app = create_app('development')
 
 
-MANAGER = Manager(APP)
-MANAGER.add_command('server', Server)
+manager = Manager(app)
+manager.add_command('server', Server)
 
-MIGRATE = Migrate(APP, DB)
-MANAGER.add_command('db', MigrateCommand)
+migrate = Migrate(app, db)
+manager.add_command('db', MigrateCommand)
 
-@MANAGER.shell
+@manager.shell
 def make_shell_context():
-    return dict(app=APP, db=DB,)
+    return dict(app=app, db=db,)
 
-@MANAGER.command
+@manager.command
 def test():
     '''
     Run the unit test
@@ -26,4 +26,4 @@ def test():
     unittest.TextTestRunner(verbosity=2).run(tests)
 
 if __name__ == '__main__':
-    MANAGER.run()
+    manager.run()
