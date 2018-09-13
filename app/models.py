@@ -36,7 +36,6 @@ class Category(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(255))
-    # Defining a one to many relationship between a category and a pitch
     pitch = db.relationship('Pitch', backref='parent_category', lazy='dynamic')
 
     def __repr__(self):
@@ -50,6 +49,8 @@ class Pitch(db.Model):
     pitch_body = db.Column(db.String)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     body = db.Column(db.String)
+    category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
+    comments = db.relationship('Comment', backref="main_pitch", cascade="all, delete-orphan", lazy="dynamic")
     def __repr__(self):
         return f'Pitch {self.title}'
 
