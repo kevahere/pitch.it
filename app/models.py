@@ -31,6 +31,17 @@ class User(UserMixin,db.Model):
     def __repr__(self):
         return f'User{self.username}'
 
+class Category(db.Model):
+    __tablename__ = 'categories'
+
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(255))
+    # Defining a one to many relationship between a category and a pitch
+    pitch = db.relationship('Pitch', backref='parent_category', lazy='dynamic')
+
+    def __repr__(self):
+        return f'Category {self.name}'
+
 class Pitch(db.Model):
     __tablename__ = 'pitches'
 
@@ -38,6 +49,21 @@ class Pitch(db.Model):
     title = db.Column(db.String(255))
     pitch_body = db.Column(db.String)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
-
+    body = db.Column(db.String)
     def __repr__(self):
         return f'Pitch {self.title}'
+
+class Comment(db.Model):
+    __tablename__ = 'comments'
+
+    id =  db.Column(db.Integer, primary_key = True)
+    author = db.Column(db.String(255))
+    comment = db.Column(db.String)
+    # Defining the foreign key from the relationship between a pitch and a comment
+    pitch_id = db.Column(db.Integer, db.ForeignKey("pitches.id"))
+
+    # Defining the foreign key from the relationship between a user and a comment
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+
+    def __repr__(self):
+        return f'Comment {self.comment}'
