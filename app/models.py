@@ -10,12 +10,16 @@ def load_user(user_id):
 
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
-    id = db.Column(db.Integer,primary_key = True)
+    id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(255),index = True)
     email = db.Column(db.String(255),unique = True, index = True)
     password = db.Column(db.String(255))
     #Definig user to pitch relationship
     pitch = db.relationship('Pitch',backref = 'user',lazy = 'dynamic')
+
+    #Create user to comment relationship
+    comment = db.relationship('Comment', backref='main_user', lazy='dynamic')
+    pass_secure = db.Column(db.String(255))
 
     @property
     def password(self):
@@ -47,9 +51,12 @@ class Pitch(db.Model):
     id =  db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(255))
     pitch_body = db.Column(db.String)
-    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     body = db.Column(db.String)
+    #Defining user relationship
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+    #Define category relationship
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
+    #Defining one relationship with comments
     comments = db.relationship('Comment', backref="main_pitch", cascade="all, delete-orphan", lazy="dynamic")
     def __repr__(self):
         return f'Pitch {self.title}'
