@@ -7,17 +7,19 @@ from flask_login import login_user, current_user, logout_user
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('main.index'))
     form = RegistrationForm()
+
+    # if current_user.is_authenticated:
+    #     return redirect(url_for('main.index'))
     if form.validate_on_submit():
         user = User(email = form.email.data, username = form.username.data, password = form.password.data)
-        # user.set_password(form.password.data)
+        user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
         flash('You are now signed up!')
+
         return redirect(url_for('auth.login'))
-        title = 'Create an account'
+        # title = 'Create an account'
     return render_template('auth/register.html', form = form)
 
 @auth.route('/login',methods = ["GET","POST"])

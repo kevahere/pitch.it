@@ -14,6 +14,7 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(255),index = True)
     email = db.Column(db.String(255),unique = True, index = True)
     password = db.Column(db.String(255))
+
     #Definig user to pitch relationship
     pitch = db.relationship('Pitch',backref = 'user',lazy = 'dynamic')
 
@@ -24,6 +25,9 @@ class User(UserMixin,db.Model):
     @property
     def password(self):
         raise AttributeError('You cannot read the password attribute')
+
+    def set_password(self, password):
+        self.pass_secure = generate_password_hash(password)
 
     @password.setter
     def password(self,password):
